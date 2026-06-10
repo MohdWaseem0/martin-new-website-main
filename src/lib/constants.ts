@@ -113,13 +113,6 @@ export const TEAM: TeamMember[] = [
     linkedin: "#",
   },
   {
-    name: "Krishna",
-    role: "Chief Experience Officer (CXO)",
-    bio: "Architect of exceptional client experiences, Krishna oversees service delivery, quality standards, and operational excellence — ensuring every project exceeds expectations, on time and within budget.",
-    image: "/images/team/krishna.jpg",
-    linkedin: "#",
-  },
-  {
     name: "Mohammad Waseem",
     role: "Chief Marketing Officer (CMO)",
     bio: "Brand strategist and growth architect, Mohammad Waseem leads Martin Global's marketing vision, digital presence, and business development — building the brand that clients trust and competitors respect.",

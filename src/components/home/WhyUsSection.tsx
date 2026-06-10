@@ -16,7 +16,7 @@ export const WhyUsSection: React.FC = () => {
     {
       icon: Users,
       title: "Direct Leadership Alignment",
-      desc: "Work closely with our executive leadership team (CEO Areeb, CXO Krishna, CMO Waseem) directly involved in your roadmap.",
+      desc: "Work closely with our executive leadership team (CEO Areeb, CMO Waseem) directly involved in your roadmap.",
     },
     {
       icon: Code,
