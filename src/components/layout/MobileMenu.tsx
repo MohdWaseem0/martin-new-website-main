@@ -2,6 +2,7 @@
 
 import React, { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence, Variants } from "framer-motion"
 import { X, ChevronDown, ArrowRight, Monitor, Code2, Smartphone, Cpu, TrendingUp, Cloud, Lightbulb, Workflow } from "lucide-react"
@@ -60,8 +61,15 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           <div className="h-[72px] flex items-center justify-between px-4 md:px-8 border-b border-[rgba(0,180,255,0.15)] flex-shrink-0">
             {/* Logo */}
             <Link href="/" onClick={onClose} className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#1565C0] to-[#00B4FF] flex items-center justify-center shadow-[0_0_15px_rgba(0,180,255,0.3)]">
-                <span className="text-white font-extrabold text-lg tracking-tighter">M</span>
+              <div className="relative w-9 h-9 flex items-center justify-center">
+                <Image
+                  src="/logo.png"
+                  alt="Martin Global Technologies Logo"
+                  fill
+                  className="object-contain"
+                  sizes="36px"
+                  priority
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-white font-bold text-base tracking-wide leading-none">

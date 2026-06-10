@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronDown, Menu, X, ArrowRight, Monitor, Code2, Smartphone, Cpu, TrendingUp, Cloud, Lightbulb, Workflow } from "lucide-react"
@@ -55,9 +56,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onMobileMenuOpen }) => {
       <div className="w-full max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
         {/* Logo and Wordmark */}
         <Link href="/" className="flex items-center gap-3 group relative z-50">
-          <div className="relative w-9 h-9 rounded-lg bg-gradient-to-br from-[#1565C0] to-[#00B4FF] flex items-center justify-center shadow-[0_0_15px_rgba(0,180,255,0.3)] group-hover:shadow-[0_0_20px_rgba(0,180,255,0.6)] transition-all duration-300">
-            <span className="text-white font-extrabold text-lg tracking-tighter">M</span>
-            <div className="absolute inset-0 rounded-lg border border-[rgba(255,255,255,0.2)]" />
+          <div className="relative w-9 h-9 flex items-center justify-center">
+            <Image
+              src="/logo.png"
+              alt="Martin Global Technologies Logo"
+              fill
+              className="object-contain"
+              sizes="36px"
+              priority
+            />
           </div>
           <div className="flex flex-col">
             <span className="text-white font-bold text-base md:text-lg tracking-wide leading-none group-hover:text-[#00B4FF] transition-colors duration-300">

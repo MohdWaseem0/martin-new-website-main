@@ -2,6 +2,7 @@
 
 import React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Monitor, Code2, Smartphone, Cpu, TrendingUp, Cloud, Lightbulb, Workflow, Mail, Phone, MapPin } from "lucide-react"
 import { COMPANY, SERVICES, NAV_LINKS } from "@/lib/constants"
 
@@ -68,8 +69,14 @@ export const Footer: React.FC = () => {
           {/* Column 1: Identity & Socials */}
           <div className="flex flex-col gap-6">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#1565C0] to-[#00B4FF] flex items-center justify-center shadow-[0_0_15px_rgba(0,180,255,0.3)]">
-                <span className="text-white font-extrabold text-lg tracking-tighter">M</span>
+              <div className="relative w-9 h-9 flex items-center justify-center">
+                <Image
+                  src="/logo.png"
+                  alt="Martin Global Technologies Logo"
+                  fill
+                  className="object-contain"
+                  sizes="36px"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-white font-bold text-base md:text-lg tracking-wide leading-none group-hover:text-[#00B4FF] transition-colors">
