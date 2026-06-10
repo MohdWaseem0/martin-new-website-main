@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { GoogleTagManager } from "@next/third-parties/google"
 import ClarityProvider from "@/components/shared/ClarityProvider"
 import "./globals.css"
 
@@ -56,6 +57,7 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${inter.variable} h-full antialiased`}
     >
+      <GoogleTagManager gtmId="GTM-PBFTX4ZF" />
       <body className="min-h-full bg-[var(--cosmos-void)] text-[var(--text-primary)] font-sans antialiased overflow-x-hidden flex flex-col">
         <Header />
         <div className="flex-grow">
