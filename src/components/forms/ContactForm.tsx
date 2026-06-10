@@ -14,7 +14,6 @@ const formSchema = z.object({
   phone: z.string().min(10, "Phone number must be at least 10 digits"),
   company: z.string().optional(),
   service: z.string().min(1, "Please select a service"),
-  budget: z.string().min(1, "Please select a budget range"),
   message: z.string().min(10, "Message must be at least 10 characters"),
 })
 
@@ -40,7 +39,6 @@ export const ContactForm: React.FC<ContactFormProps> = ({ compact = false }) => 
       phone: "",
       company: "",
       service: "",
-      budget: "",
       message: "",
     },
   })
@@ -56,7 +54,6 @@ I would like to request a consultation. Here are my details:
 • Email: ${data.email}
 • Phone: ${data.phone}
 ${data.company ? `• Company: ${data.company}\n` : ""}• Service Requested: ${data.service}
-• Estimated Budget: ${data.budget}
 
 Message:
 ${data.message}
@@ -146,48 +143,26 @@ Please get back to me. Thank you!`
         </div>
       </div>
 
-      {/* Service & Budget row */}
-      <div className={`grid grid-cols-1 ${compact ? "" : "sm:grid-cols-2"} gap-4`}>
-        <div className="flex flex-col gap-1.5">
-          <label htmlFor="service" className="text-xs font-semibold text-slate-300 uppercase tracking-wider pl-1">
-            Select Service *
-          </label>
-          <select
-            id="service"
-            {...register("service")}
-            className="form-input bg-[#0A1128]"
-          >
-            <option value="">-- Choose Option --</option>
-            {SERVICES.map((s) => (
-              <option key={s.id} value={s.title}>
-                {s.title}
-              </option>
-            ))}
-          </select>
-          {errors.service && (
-            <span className="text-xs text-rose-500 pl-1">{errors.service.message}</span>
-          )}
-        </div>
-
-        <div className="flex flex-col gap-1.5">
-          <label htmlFor="budget" className="text-xs font-semibold text-slate-300 uppercase tracking-wider pl-1">
-            Project Budget *
-          </label>
-          <select
-            id="budget"
-            {...register("budget")}
-            className="form-input bg-[#0A1128]"
-          >
-            <option value="">-- Budget Range --</option>
-            <option value="Under $5k">Under $5k</option>
-            <option value="$5k - $10k">$5k - $10k</option>
-            <option value="$10k - $25k">$10k - $25k</option>
-            <option value="$25k+">$25k+</option>
-          </select>
-          {errors.budget && (
-            <span className="text-xs text-rose-500 pl-1">{errors.budget.message}</span>
-          )}
-        </div>
+      {/* Service Selection */}
+      <div className="flex flex-col gap-1.5">
+        <label htmlFor="service" className="text-xs font-semibold text-slate-300 uppercase tracking-wider pl-1">
+          Select Service *
+        </label>
+        <select
+          id="service"
+          {...register("service")}
+          className="form-input bg-[#0A1128]"
+        >
+          <option value="">-- Choose Option --</option>
+          {SERVICES.map((s) => (
+            <option key={s.id} value={s.title}>
+              {s.title}
+            </option>
+          ))}
+        </select>
+        {errors.service && (
+          <span className="text-xs text-rose-500 pl-1">{errors.service.message}</span>
+        )}
       </div>
 
       {/* Message */}
